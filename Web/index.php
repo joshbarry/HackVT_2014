@@ -17,10 +17,16 @@
 
 	<form>
 	First name: <input type="text" name="firstname"><br>
-	Age: <input type="text" name="age">
-	Home Address:<input type="text" name="home-address">
-	Work Address:<input type="text" name="work-address">
-	Type of Heat:<input ...>
+	City, State (Home):<input type="text" name="home-address">
+	City, State (Work):<input type="text" name="work-address">
+	Current Heat Source:<select name="cars">
+		<option value="wood">Wood</option>
+		<option value="pellet">Pellet Stove</option>
+		<option value="natural gas">Natural Gas</option>
+		<option value="oil">Oil</option>
+		<option value="geothermal">Geothermal</option>
+		<option value="baseboard">Baseboard</option>
+		</select>
 	Type of Power<input ...>
 	
 	</form>
