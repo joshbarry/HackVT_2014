@@ -1,7 +1,13 @@
-
 <?php
+// Create connection
+$con=mysqli_connect("localhost","root","=Hodod3ndron","hackvt");
 
+// Check connection
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -23,7 +29,8 @@
 	  	<label for="checkRent"></label></div><br><br>
 	How Long Will You Stay:<input type="range" name="years" id="years" value="5" data-popup-enabled="true" data-hightlight="true" min="0" max="80"><br>
 	Current Heat Source:<select name="heat">
-		<option value="wood">Wood</option>
+		<option value="-1" disabled="disabled" selected="selected">Select a Heat Source</option>
+		<option value="wood" <?php if ($_GET["heat"] == "wood") { print "selected=\"selected\""; } ?> >Wood</option>
 		<option value="pellet">Pellet Stove</option>
 		<option value="natural gas">Natural Gas</option>
 		<option value="oil">Oil</option>
@@ -33,8 +40,17 @@
 		<option value="heatPump">Heat Pump</option>
 		<option value="baseboard">Baseboard</option>
 		</select><br>
-	<?php //insert SQL code to update anchor text ?>
-	Heat Usage: <?php echo "Anchor 1" ?><input type="range" name="heatusage" id="heatusage" value="50" min="0" max="100"><?php echo "Anchor 2" ?><br>
+	<?php 
+	$heat = $_POST["heat"];
+	$result = mysqli_query($con,"SELECT * FROM anchors WHERE type = $heat;"); 
+	while($row = mysqli_fetch_array($result)) {
+	  $a1=$row['a1'];
+	  $a2=$row['a2'];
+	  $a3=$row['min'];
+	  $a4=$row['max'];
+	  echo "<br>";
+	}?>
+	Heat Usage: <?php echo $a1 ?><input type="range" name="heatusage" id="heatusage" value="1" min=<?php $a3 ?> max=<?php $a4 ?>><?php echo $a2 ?><br>
 	Type of Power<select name="power">
 		<option value="electric">Electric (Grid)</option>
 		<option value="solar">Solar</option>
