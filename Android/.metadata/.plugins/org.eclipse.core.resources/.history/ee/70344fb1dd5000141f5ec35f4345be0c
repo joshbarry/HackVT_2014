@@ -1,0 +1,186 @@
+package com.example.hackvtkarma;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GraphView.GraphViewData;
+import com.jjoe64.graphview.GraphViewSeries;
+import com.jjoe64.graphview.LineGraphView;
+
+
+
+public class MainActivity extends ActionBarActivity {
+	
+	private TextView heatCost;
+	private SeekBar heatSeekbar;
+	private TextView heatCostNotification;
+	private EditText firstNameEditText;
+	private List<String> spinnerArray;
+	private String[] towns = {"Burlington","Williston","Essex"};
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+    	
+    	super.onCreate(savedInstanceState);
+    	setContentView(R.layout.fragment_main);
+    	setupUI(findViewById(R.id.parent));
+    	
+    	spinnerArray = new ArrayList<String>();
+    	
+    	for(int i = 0; i <towns.length; i++){
+    		spinnerArray.add(towns[i]);    		
+    	}
+    	
+    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,spinnerArray);
+    	adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    	Spinner sItems = (Spinner) findViewById(R.id.townSpinner);
+    	Spinner sWorkItems = (Spinner) findViewById(R.id.townWorkSpinner);
+    	sItems.setAdapter(adapter);
+    	sWorkItems.setAdapter(adapter);
+    	
+    	heatSeekbar = (SeekBar)findViewById(R.id.heatSeekbar);
+    	heatCostNotification = (TextView)findViewById(R.id.heatCostNotification);
+    	
+		heatSeekbar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+			int progressChanged = 0;
+
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+				progressChanged = progress;
+				String progressNumber = Integer.toString(progressChanged);
+				String progressCost = "$" + progressNumber;
+				heatCostNotification.setText(progressCost);
+				
+				
+			}
+
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+			}
+
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				//Toast.makeText(MainActivity.this,"seek bar progress:"+progressChanged, 
+						//Toast.LENGTH_SHORT).show();
+			}
+		});
+		
+		// init example series data
+		GraphViewSeries exampleSeries = new GraphViewSeries(new GraphViewData[] {
+		    new GraphViewData(1, 2.0d)
+		    , new GraphViewData(2, 1.5d)
+		    , new GraphViewData(3, 2.5d)
+		    , new GraphViewData(4, 1.0d)
+		});
+		 
+		GraphView graphView = new LineGraphView(
+		    this // context
+		    , "GraphViewDemo" // heading
+		);
+		graphView.addSeries(exampleSeries); // data
+		 
+		RelativeLayout layout = (RelativeLayout) findViewById(R.id.parent);
+		layout.addView(graphView);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+
+        public PlaceholderFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            return rootView;
+        }
+    }
+    public static void hideSoftKeyboard(Activity activity) {
+        InputMethodManager inputMethodManager = (InputMethodManager)  activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+    }
+    
+    public void setupUI(View view) {
+
+        //Set up touch listener for non-text box views to hide keyboard.
+        if(!(view instanceof EditText)) {
+
+            view.setOnTouchListener(new OnTouchListener() {
+
+                public boolean onTouch(View v, MotionEvent event) {
+                    hideSoftKeyboard(MainActivity.this);
+                    firstNameEditText = (EditText)findViewById(R.id.firstNameEditText);
+                    firstNameEditText.setCursorVisible(false);
+                    return false;
+                }
+
+            });
+        }
+        
+        if(view instanceof EditText) {
+
+            view.setOnTouchListener(new OnTouchListener() {
+
+                public boolean onTouch(View v, MotionEvent event) {
+                    firstNameEditText = (EditText)findViewById(R.id.firstNameEditText);
+                    firstNameEditText.setCursorVisible(true);
+                    return false;
+                }
+
+            });
+        }
+
+        //If a layout container, iterate over children and seed recursion.
+        if (view instanceof ViewGroup) {
+
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+
+                View innerView = ((ViewGroup) view).getChildAt(i);
+
+                setupUI(innerView);
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_name">HackVTKarma</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="seekbar_text">Heres the seekbar text</string>
+    <string name="first_name">What is your first name?</string>
+    <string name="first_name_hint">John Doe</string>
+    <string name="address">Where do you live?</string>
+    <string name="town_prompt">Pick your town</string>
+    <string name="address_work">Where do you work?</string>
+    <string name="town_work_prompt">Pick your town</string>
+    <string name="heat_source">Pick your heat source</string>
+    <string name="heat_source_prompt">Pick heat source</string>
+    
+    <string-array name="heat_array">
+        <item>Wood</item>
+        <item>Pellet Stove</item>
+        <item>Natural Gas</item>
+        <item>Oil</item>
+        <item>Propane</item>
+        <item>Kerosene</item>
+        <item>Geothermal</item>
+        <item>Heat Pump</item>
+        <item>Baseboard</item>
+    </string-array>
+
+</resources>

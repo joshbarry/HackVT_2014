@@ -1,0 +1,129 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        	
+        	<LinearLayout
+            android:id="@+id/LinearLayout01"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+			    <TextView
+			        android:id="@+id/firstName"
+			        android:textSize="20sp"
+			        android:layout_margin="5dp"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/first_name" />
+			    
+			    <EditText
+			        android:id="@+id/firstNameEditText"
+			        android:layout_margin="5dp"
+			        
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:hint="@string/first_name_hint"/>
+			    
+			    <TextView
+			        android:id="@+id/town"
+			        
+			        android:textSize="20sp"
+			        android:layout_margin="5dp"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/address" />
+			    
+				<Spinner
+				    android:id="@+id/townSpinner"
+				    
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:prompt="@string/town_prompt"/>
+				
+				<TextView
+			        android:id="@+id/townWork"
+			        
+			        android:textSize="20sp"
+			        android:layout_margin="5dp"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/address_work" />
+			    
+				<Spinner
+				    android:id="@+id/townWorkSpinner"
+				    
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:prompt="@string/town_work_prompt"/>
+			        
+			   	<TextView
+			        android:id="@+id/heatSource"
+			        android:textSize="20sp"
+			        android:layout_margin="5dp"
+			        
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/heat_source" />
+			   	
+			   	<Spinner
+				    android:id="@+id/heatSourcePicker"
+				    
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:entries="@array/heat_array"
+				    android:prompt="@string/heat_source_prompt"/>
+			        
+			   	<TextView
+			        android:id="@+id/heatCost"
+			        android:textSize="20sp"
+			        android:layout_margin="5dp"
+			        
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/heat_cost" />
+			        
+			    <SeekBar
+			        android:id="@+id/heatSeekbar"
+			        android:layout_margin="10dp"
+			        
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:max="1000"
+			        android:progress="0"
+			        android:secondaryProgress="0" />
+			    
+			    <TextView
+			        android:id="@+id/heatAnchorLeft"
+			        android:textSize="20sp"
+			        android:layout_margin="5dp"
+			        
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/heat_anchor_left" />
+			    
+			    <TextView
+			        android:id="@+id/heatAnchorRight"
+			        android:textSize="20sp"
+			        android:layout_margin="5dp"
+			        
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/heat_anchor_right" />
+			    
+			    <TextView
+			        android:id="@+id/heatCostNotification"
+			        android:textSize="20sp"
+			        android:layout_margin="5dp"
+			        
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/heat_anchor_left" />
+		</LinearLayout>
+	</RelativeLayout>
+</ScrollView>
