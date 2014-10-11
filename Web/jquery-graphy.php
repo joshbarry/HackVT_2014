@@ -33,7 +33,7 @@ function makifyGraph( val1, val2 ){
       }
 	});
 }*/
-function makifyGraph( month = 1, cost = 0 ){
+function makifyGraph( month = 1, cost = 0, numsolar = 1 ){
 	$("#chartdiv").replaceWith('<div id="chartdiv" style="height:450px;width:450px; "></div>');
 	var months = [ "January", "February", "March", "April", "May", "June", 
                "July", "August", "September", "October", "November", "December" ];
@@ -77,7 +77,7 @@ function makifyGraph( month = 1, cost = 0 ){
 	for(var i = 0; i < lineSolar[month-1].length; i++){
 		sum += parseInt(lineSolar[month-1][i], 10); //don't forget to add the base
 	}
-	var avgSolar = ((sum/lineSolar[month-1].length)*0.16).toFixed(2);
+	var avgSolar = ((sum/lineSolar[month-1].length)*0.16*numsolar).toFixed(2);
 	$( "#solarcostfld" ).replaceWith( '<div id="solarcostfld">$' + avgSolar + '</div>' );
 	// AVG Hydro
 	sum = 0;
@@ -94,6 +94,9 @@ function makifyGraph( month = 1, cost = 0 ){
 	var avgWind = ((sum/lineWind[month-1].length)*0.1919).toFixed(2);
 	$( "#windcostfld" ).replaceWith( '<div id="windcostfld">$' + avgWind + '</div>' );
 	//----
+	for(var i=0; i<lineSolar[month-1].length; i++) {
+		lineSolar[month-1][i] *= numsolar;
+	}
 	var plot2 = $.jqplot ('chartdiv', [lineSolar[month-1], lineHydro[month-1], lineWind[month-1], lineAvgCost], {
       // Give the plot a title.
       title: 'Averages for ' + selectedMonthName,
@@ -132,7 +135,7 @@ function makifyGraph( month = 1, cost = 0 ){
         yaxis: {
           label: "Daily KW/H Usage (AVG)",
 		  min: 0,
-		  max: 50
+		  max: 40
         }
       }
     });

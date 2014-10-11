@@ -29,11 +29,15 @@ include('jquery-graphy.php');
 $(function() {
     $("#month").on("change",  getMonthyValue);
     $("#cost").on("change",  getCostyValue);
+    $("#solar").on("change",  getSolaryValue);
 });
 function getMonthyValue(){
-	makifyGraph($("#month").val(),$("#cost").val()/30);
+	makifyGraph($("#month").val(),$("#cost").val()/30,$("#solar").val());
 }
 function getCostyValue(){
-	makifyGraph($("#month").val(),$("#cost").val()/30);
+	makifyGraph($("#month").val(),$("#cost").val()/30,$("#solar").val());
+}
+function getSolaryValue(){
+	makifyGraph($("#month").val(),$("#cost").val()/30,$("#solar").val());
 }
 </script>
