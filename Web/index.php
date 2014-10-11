@@ -35,6 +35,7 @@
 				<div class="viewTitle">Number of Solar Panels:</div>
 				<div class="viewField">
 					<input type="range" name="solar" id="solar" value="1" data-popup-enabled="true" data-hightlight="true" min="1" max="10">
+				</div>
 			</div>
 			<div class="viewItem">
 				<div class="viewTitle">Your Current Average Cost:</div>
@@ -61,20 +62,20 @@
 				</div>
 			</div>
 			<div class="viewItem">
-			<table>
-			<tr>
-			<td><label for="switch">Solar:</label></td>
-			<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>
-			</tr>
-			<tr>
-			<td><label for="switch">Wind:</label></td>
-			<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>
-			</tr>
-			<tr>
-			<td><label for="switch">Hydro:</label></td>
-			<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>
-			</tr>
-			</table>
+				<table>
+				<tr>
+				<td><label for="switch">Solar:</label></td>
+				<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>
+				</tr>
+				<tr>
+				<td><label for="switch">Wind:</label></td>
+				<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>
+				</tr>
+				<tr>
+				<td><label for="switch">Hydro:</label></td>
+				<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>
+				</tr>
+				</table>
 			</div>
 			</form>
 		</div>
