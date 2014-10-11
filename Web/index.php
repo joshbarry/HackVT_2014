@@ -35,7 +35,6 @@
 				<div class="viewTitle">Number of Solar Panels:</div>
 				<div class="viewField">
 					<input type="range" name="solar" id="solar" value="1" data-popup-enabled="true" data-hightlight="true" min="1" max="10">
-				</div>
 			</div>
 			<div class="viewItem">
 				<div class="viewTitle">Your Current Average Cost:</div>
