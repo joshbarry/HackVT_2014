@@ -15,8 +15,8 @@ require_once( '../support.php' );
 if ($_GET['bacon']=="yes") {
 	
 	// Retrieve details from DB.
-	$connector = dbconnect();
-	$grabtypes_stmt = $connector->prepare('SELECT * FROM anchor');
+	$con = dbconnect();
+	$grabtypes_stmt = $con->prepare('SELECT * FROM anchors');
 	$grabtypes_stmt->execute();
 	$results = dbGetResultRows($grabtypes_stmt);
 	if(is_array($results)) {
@@ -28,7 +28,7 @@ if ($_GET['bacon']=="yes") {
 			$tmax = $row['max'];
 		}
 	}
-	dbdisconnect($connector);
+	dbdisconnect($con);
 
 	$finalResponse = array(
 		"Type" => $ttype,

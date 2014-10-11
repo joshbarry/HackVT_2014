@@ -20,7 +20,7 @@
 */ 
 function dbconnect () {
 	// Establish connection
-	$con=mysqli_connect("webdb.uvm.edu","root","=Hodod3ndron","hackvt");
+	$con=mysqli_connect("localhost","root","=Hodod3ndron","hackvt");
 	//Validate Server Connection
 	if (mysqli_connect_errno($con)) { die('ERROR : Failed to connect to MySQL Database (W): ' . mysqli_connect_error()); }
 	// Also ensure our connection is using utf-8 encoding.
