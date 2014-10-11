@@ -38,25 +38,25 @@
 				</div>
 			</div>
 			<div class="viewItem" style="margin-top:5px;">
-				<div class="viewTitle">Your Current Average Cost:</div>
+				<div class="viewTitle"><b>Your Current Average Cost:</b></div>
 				<div class="viewField" style="margin:8px; display:block;">
 				<div id="avgcostfld">$</div>
 				</div>
 			</div>
 			<div class="viewItem" style="margin-top:5px;">
-				<div class="viewTitle">Average Solar Cost:</div>
+				<div class="viewTitle"><b>Average Solar Cost:</b></div>
 				<div class="viewField" style="margin:8px; display:block;">
 				<div id="solarcostfld">$</div>
 				</div>
 			</div>
 			<div class="viewItem" style="margin-top:5px;">
-				<div class="viewTitle">Average Hydro Cost:</div>
+				<div class="viewTitle"><b>Average Hydro Cost:</b></div>
 				<div class="viewField" style="margin:8px; display:block;">
 				<div id="hydrocostfld">$</div>
 				</div>
 			</div>
 			<div class="viewItem" style="margin-top:5px;">
-				<div class="viewTitle">Average Wind Cost:</div>
+				<div class="viewTitle"><b>Average Wind Cost:</b></div>
 				<div class="viewField" style="margin:8px; display:block;">
 				<div id="windcostfld">$</div>
 				</div>
