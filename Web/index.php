@@ -20,19 +20,19 @@
 		<div id="content-left">
 			<form>
 			<div class="viewItem" id="monthClick">
-				<div class="viewTitle">Month of the Year:</div>
+				<div class="viewTitle"><b>Month of the Year:</b></div>
 				<div class="viewField">
 					<input type="range" name="month" id="month" value="1" data-popup-enabled="true" data-hightlight="true" min="1" max="12">
 				</div>
 			</div>
 			<div class="viewItem">
-				<div class="viewTitle">Monthly KW/H Usage:</div>
+				<div class="viewTitle"><b>Monthly KW/H Usage:</b></div>
 				<div class="viewField">
 					<input type="range" name="cost" id="cost" value="0" data-popup-enabled="true" data-hightlight="true" min="0" max="999">
 				</div>
 			</div>
 			<div class="viewItem">
-				<div class="viewTitle">Number of Solar Panels:</div>
+				<div class="viewTitle"><b>Number of Solar Panels:</b></div>
 				<div class="viewField">
 					<input type="range" name="solar" id="solar" value="1" data-popup-enabled="true" data-hightlight="true" min="1" max="10">
 				</div>
