@@ -2,16 +2,14 @@
 require_once("support.php");
 $con = dbconnect();
 
-	$resultAnchor = mysqli_query($con,"SELECT * FROM anchors"); 
-	while($row = mysqli_fetch_array($resultAnchor)) {
-	  $a1=$row['a1'];
-	  $a2=$row['a2'];
-	  $a3=$row['min'];
-	  $a4=$row['max'];
-	}
+$resultAnchor = mysqli_query($con,"SELECT * FROM anchors"); 
+while($row = mysqli_fetch_array($resultAnchor)) {
+	$a1=$row['a1'];
+	$a2=$row['a2'];
+	$a3=$row['min'];
+	$a4=$row['max'];
+}
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,24 +17,7 @@ $con = dbconnect();
 	<link rel="shortcut icon" href="img/icon.ico">
 	<link href="css/mainStyle.css" type="text/css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="./js/jquery-min.js"></script>
-	<script>
-function addFields(){
-  $("#heatUse").replaceWith('<div id="heatUse"> <p>Heat Usage: </p><?php echo $a1 ?><input type="range" name="heatusage" id="heatusage" value="1" min=<?php $a3 ?> max=<?php $a4 ?>><?php echo $a2 ?><br></div>');
-}
-function addPower(){
-	$("#powerUse").replaceWith('<div id="powerUse"> <p>Heat Usage: </p><?php echo $a1 ?><input type="range" name="heatusage" id="heatusage" value="1" min=<?php $a3 ?> max=<?php $a4 ?>><?php echo $a2 ?><br></div>');
-}
-$(function(){
-	$('#heat').click(function(){
-		addFields();
-	});
-	
-	$('#power').click(function(){
-		addPower();
-	});
-});
-</script>
+	<script src="/js/jquery-min.js"></script>
 </head>
 
 <body class="sf-home">
@@ -45,6 +26,13 @@ $(function(){
 	First name: <input type="text" name="firstname"><br>
 	City (Home):<input type="text" name="home-address"><br>
 	City (Work):<input type="text" name="work-address"><br>
+	Mode of Transport: <select id="transport" name="transport">
+		<option value="-1" disabled="disabled" selected="selected">Select a Method of Transportation</option>
+		<option value="electric">Walk</option>
+		<option value="solar">Bike</option>
+		<option value="wind">Drive</option>
+		</select><br>
+	<div id="transportDiv"> </div>
 	Rent or Buy: <div class="checkRent">
   		<input type="checkbox" value="1" id="checkRent" name="checkRent"  style="display:none"/>
 	  	<label for="checkRent"></label></div><br><br>
