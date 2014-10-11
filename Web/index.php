@@ -5,6 +5,9 @@
 	<link rel="shortcut icon" href="img/icon.ico">
 	<link href="css/mainStyle.css" type="text/css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]-->
+	<script language="javascript" type="text/javascript" src="/lib/jqplot/jquery.jqplot.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/lib/jqplot/jquery.jqplot.css" />
 	<?php include 'jquery-min.php' ?>
 </head>
 
