@@ -11,6 +11,7 @@ while($row = mysqli_fetch_array($resultAnchor)) {
 }
 ?>
 <!DOCTYPE html>
+<?php include('jquery-graphy.php'); ?>
 <script>
 function addFields(){
   $("#heatUse").replaceWith('<div id="heatUse"> <p>Heat Usage: </p><?php echo $a1 ?><input type="range" name="heatusage" id="heatusage" value="1" min=<?php $a3 ?> max=<?php $a4 ?>><?php echo $a2 ?><br></div>');
