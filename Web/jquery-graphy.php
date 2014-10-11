@@ -70,29 +70,29 @@ function makifyGraph( month = 1, cost = 0, numsolar = 1 ){
 		lineAvgCost.push([i, cost]);
 	}
 	// Your AVG cost
-	var avgYours = cost.toFixed(2);
-	$( "#avgcostfld" ).replaceWith( '<div id="avgcostfld">$' + avgYours + '</div>' );
+	var avgYours = (cost*0.14959).toFixed(2);
+	$( "#avgcostfld" ).replaceWith( '<div id="avgcostfld">$' + avgYours + ' / day | $' + (avgYours*31).toFixed(2) + ' / month</div>' );
 	// AVG solar
 	sum = 0;
 	for(var i = 0; i < lineSolar[month-1].length; i++){
 		sum += parseInt(lineSolar[month-1][i], 10); //don't forget to add the base
 	}
 	var avgSolar = ((sum/lineSolar[month-1].length)*0.16*numsolar).toFixed(2);
-	$( "#solarcostfld" ).replaceWith( '<div id="solarcostfld">$' + avgSolar + '</div>' );
+	$( "#solarcostfld" ).replaceWith( '<div id="solarcostfld">$' + avgSolar + ' / day | $' + (avgSolar*31).toFixed(2) + ' / month</div>' );
 	// AVG Hydro
 	sum = 0;
 	for(var i = 0; i < lineHydro[month-1].length; i++){
 		sum += parseInt(lineHydro[month-1][i], 10); //don't forget to add the base
 	}
 	var avgHydro = ((sum/lineHydro[month-1].length)*0.85).toFixed(2);
-	$( "#hydrocostfld" ).replaceWith( '<div id="hydrocostfld">$' + avgHydro + '</div>' );
+	$( "#hydrocostfld" ).replaceWith( '<div id="hydrocostfld">$' + avgHydro + ' / day | $' + (avgHydro*31).toFixed(2) + ' / month</div>' );
 	// AVG Wind
 	sum = 0;
 	for(var i = 0; i < lineWind[month-1].length; i++){
 		sum += parseInt(lineWind[month-1][i], 10); //don't forget to add the base
 	}
 	var avgWind = ((sum/lineWind[month-1].length)*0.1919).toFixed(2);
-	$( "#windcostfld" ).replaceWith( '<div id="windcostfld">$' + avgWind + '</div>' );
+	$( "#windcostfld" ).replaceWith( '<div id="windcostfld">$' + avgWind + ' / day | $' + (avgWind*31).toFixed(2) + ' / month</div>' );
 	//----
 	for(var i=0; i<lineSolar[month-1].length; i++) {
 		lineSolar[month-1][i] *= numsolar;
