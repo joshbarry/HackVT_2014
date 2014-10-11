@@ -49,7 +49,7 @@ function makifyGraph( val1, val2 ){
 	}
 	var lineAvgCost = [];
 	for (var i=0; i<5; i+=1){
-		lineAvgCost.push([i, i+i+i]);
+		lineAvgCost.push([i, 15]);
 	}
 	var plot2 = $.jqplot ('chartdiv', [lineSolar, lineHydro, lineWind, lineAvgCost], {
       // Give the plot a title.
@@ -63,17 +63,29 @@ function makifyGraph( val1, val2 ){
       // An axes object holds options for all axes.
       // Allowable axes are xaxis, x2axis, yaxis, y2axis, y3axis, ...
       // Up to 9 y axes are supported.
+	  series:[
+		{label:'Solar'},
+		{label:'Hydro'},
+		{label:'Wind'},
+		{label:'Avg Cost'}
+		],
+	  legend: {
+        show: true,
+        location: 'nw',     // compass direction, nw, n, ne, e, se, s, sw, w.
+        xoffset: 12,        // pixel offset of the legend box from the x (or x2) axis.
+        yoffset: 12,        // pixel offset of the legend box from the y (or y2) axis.
+     },
       axes: {
         // options for each axis are specified in seperate option objects.
         xaxis: {
-          label: "X Axis",
+          label: "Day of Month",
           // Turn off "padding".  This will allow data point to lie on the
           // edges of the grid.  Default padding is 1.2 and will keep all
           // points inside the bounds of the grid.
           pad: 0
         },
         yaxis: {
-          label: "Y Axis"
+          label: "KW/H Usage (AVG)"
         }
       }
     });
