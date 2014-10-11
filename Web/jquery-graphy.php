@@ -69,6 +69,31 @@ function makifyGraph( month = 1, cost = 0 ){
 	for (var i=0; i<31; i+=1){
 		lineAvgCost.push([i, cost]);
 	}
+	// Your AVG cost
+	var avgYours = cost.toFixed(2);
+	$( "#avgcostfld" ).replaceWith( '<div id="avgcostfld">$' + avgYours + '</div>' );
+	// AVG solar
+	sum = 0;
+	for(var i = 0; i < lineSolar[month-1].length; i++){
+		sum += parseInt(lineSolar[month-1][i], 10); //don't forget to add the base
+	}
+	var avgSolar = (sum/lineSolar[month-1].length).toFixed(2);
+	$( "#solarcostfld" ).replaceWith( '<div id="solarcostfld">$' + avgSolar + '</div>' );
+	// AVG Hydro
+	sum = 0;
+	for(var i = 0; i < lineHydro[month-1].length; i++){
+		sum += parseInt(lineHydro[month-1][i], 10); //don't forget to add the base
+	}
+	var avgHydro = (sum/lineHydro[month-1].length).toFixed(2);
+	$( "#hydrocostfld" ).replaceWith( '<div id="hydrocostfld">$' + avgHydro + '</div>' );
+	// AVG Wind
+	sum = 0;
+	for(var i = 0; i < lineWind[month-1].length; i++){
+		sum += parseInt(lineWind[month-1][i], 10); //don't forget to add the base
+	}
+	var avgWind = (sum/lineWind[month-1].length).toFixed(2);
+	$( "#windcostfld" ).replaceWith( '<div id="windcostfld">$' + avgWind + '</div>' );
+	//----
 	var plot2 = $.jqplot ('chartdiv', [lineSolar[month-1], lineHydro[month-1], lineWind[month-1], lineAvgCost], {
       // Give the plot a title.
       title: 'Averages for ' + selectedMonthName,

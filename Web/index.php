@@ -15,7 +15,7 @@
 </head>
 
 <body class="sf-home">
-	<h1>Environmental Calculator V.II.V</h1>
+	<h1 style="text-align:center;">Environmental Calculator V.II.V</h1>
 	<div id="content">
 		<div id="content-left">
 			<form>
@@ -32,21 +32,27 @@
 				</div>
 			</div>
 			<div class="viewItem">
+				<div class="viewTitle">Your Current Average Cost:</div>
+				<div class="viewField" style="margin:8px; display:block;">
+				<div id="avgcostfld">$</div>
+				</div>
+			</div>
+			<div class="viewItem">
 				<div class="viewTitle">Average Solar Cost:</div>
-				<div class="viewField">
-				Foo
+				<div class="viewField" style="margin:8px; display:block;">
+				<div id="solarcostfld">$</div>
 				</div>
 			</div>
 			<div class="viewItem">
 				<div class="viewTitle">Average Hydro Cost:</div>
-				<div class="viewField">
-				Foo
+				<div class="viewField" style="margin:8px; display:block;">
+				<div id="hydrocostfld">$</div>
 				</div>
 			</div>
 			<div class="viewItem">
 				<div class="viewTitle">Average Wind Cost:</div>
-				<div class="viewField">
-				Foo
+				<div class="viewField" style="margin:8px; display:block;">
+				<div id="windcostfld">$</div>
 				</div>
 			</div>
 			</form>

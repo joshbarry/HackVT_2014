@@ -23,9 +23,8 @@ for ($i = 1; $i < 13; $i++) {
 	$arrayMonthDatas[]=[$wind,$hydro,$solar,$day];
 }
 dbdisconnect($con);
+include('jquery-graphy.php');
 ?>
-<!DOCTYPE html>
-<?php include('jquery-graphy.php'); ?>
 <script>
 $(function() {
     $("#month").on("change",  getMonthyValue);
