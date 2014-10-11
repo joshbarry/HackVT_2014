@@ -15,7 +15,7 @@
 </head>
 
 <body class="sf-home">
-	<h1 style="text-align:center;">Environmental Calculator V.II.V</h1>
+	<h1 style="text-align:center;">The Cost of <i>Going Green</i></h1>
 	<div id="content">
 		<div id="content-left">
 			<form>
@@ -28,7 +28,13 @@
 			<div class="viewItem">
 				<div class="viewTitle">Monthly KW/H Usage:</div>
 				<div class="viewField">
-					<input type="range" name="cost" id="cost" value="0" data-popup-enabled="true" data-hightlight="true" min="0" max="1500">
+					<input type="range" name="cost" id="cost" value="0" data-popup-enabled="true" data-hightlight="true" min="0" max="999">
+				</div>
+			</div>
+			<div class="viewItem">
+				<div class="viewTitle"># of Solar Panels:</div>
+				<div class="viewField">
+					<input type="range" name="solar" id="solar" value="0" data-popup-enabled="true" data-hightlight="true" min="0" max="50">
 				</div>
 			</div>
 			<div class="viewItem">
