@@ -38,23 +38,35 @@ function makifyGraph( month = 1, cost = 0 ){
 	var months = [ "January", "February", "March", "April", "May", "June", 
                "July", "August", "September", "October", "November", "December" ];
 	var selectedMonthName = months[month-1];
-	var lineSolar = [];
-	for (var i=0; i<31; i+=1){
-		lineSolar.push([i, i*i]);
+	<?php
+	for ($i=0; $i<12; $i++) {
+		$monthData = $arrayMonthDatas[$i];
+		$bacon .= 'var lineWind'.$i.' = [';
+		foreach ($monthData[0] as $windy) {
+			$bacon .= '"'.$windy.'", ';
+		}
+		$bacon = substr($bacon, 0, -2);
+		$bacon .= '];';
+		$bacon .= 'var lineHydro'.$i.' = [';
+		foreach ($monthData[1] as $hydro) {
+			$bacon .= '"'.$hydro.'", ';
+		}
+		$bacon = substr($bacon, 0, -2);
+		$bacon .= '];';
+		$bacon .= 'var lineSolar'.$i.' = [';
+		foreach ($monthData[2] as $solar) {
+			$bacon .= '"'.(int)$solar.'", ';
+		}
+		$bacon = substr($bacon, 0, -2);
+		$bacon .= '];';
+		echo $bacon;
 	}
-	var lineHydro = [];
-	for (var i=0; i<31; i+=1){
-		lineHydro.push([i, i+i]);
-	}
-	var lineWind = [];
-	for (var i=0; i<31; i+=1){
-		lineWind.push([i, i]);
-	}
+	?>
 	var lineAvgCost = [];
 	for (var i=0; i<31; i+=1){
 		lineAvgCost.push([i, cost]);
 	}
-	var plot2 = $.jqplot ('chartdiv', [lineSolar, lineHydro, lineWind, lineAvgCost], {
+	var plot2 = $.jqplot ('chartdiv', [lineSolar0, lineHydro0, lineWind0, lineAvgCost], {
       // Give the plot a title.
       title: 'Averages for ' + selectedMonthName,
       // You can specify options for all axes on the plot at once with
