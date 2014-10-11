@@ -57,6 +57,13 @@
 			</div>
 			
 			<div class="viewItem">
+				<div class="viewTitle">Size of Home:</div>
+				<div class="viewField">
+					<input type="range" name="size" id="size" value="5" data-popup-enabled="true" data-hightlight="true" min="500" max="5000">
+				</div>
+			</div>
+			
+			<div class="viewItem">
 				<div class="viewTitle">Current Heat Source:</div>
 				<div class="viewField">
 					<select name="heat" id="heat">
@@ -66,7 +73,6 @@
 						<option value="natural gas">Natural Gas</option>
 						<option value="oil">Oil</option>
 						<option value="propane">Propane</option>
-						<option value="kerosene">Kerosene</option>
 						<option value="geothermal">Geothermal</option>
 						<option value="heatPump">Heat Pump</option>
 						<option value="baseboard">Baseboard</option>
