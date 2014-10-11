@@ -77,22 +77,25 @@ function makifyGraph( month = 1, cost = 0, numsolar = 1 ){
 	for(var i = 0; i < lineSolar[month-1].length; i++){
 		sum += parseInt(lineSolar[month-1][i], 10); //don't forget to add the base
 	}
-	var avgSolar = ((sum/lineSolar[month-1].length)*0.16*numsolar).toFixed(2);
-	$( "#solarcostfld" ).replaceWith( '<div id="solarcostfld">$' + avgSolar + ' / day | $' + (avgSolar*31).toFixed(2) + ' / month</div>' );
+	//var avgSolar = ((sum/lineSolar[month-1].length)*0.16*numsolar).toFixed(2);
+	var avgSolar = ((cost)*0.16*numsolar).toFixed(2);
+	$( "#solarcostfld" ).replaceWith( '<div id="solarcostfld">$' + avgSolar + ' / day | $' + (avgSolar*31).toFixed(2) + ' / month<br /><span style="color:#AA0000;">Installation Cost: $' + (numsolar*13200).toFixed(2) + '</span></div>' );
 	// AVG Hydro
 	sum = 0;
 	for(var i = 0; i < lineHydro[month-1].length; i++){
 		sum += parseInt(lineHydro[month-1][i], 10); //don't forget to add the base
 	}
-	var avgHydro = ((sum/lineHydro[month-1].length)*0.85).toFixed(2);
-	$( "#hydrocostfld" ).replaceWith( '<div id="hydrocostfld">$' + avgHydro + ' / day | $' + (avgHydro*31).toFixed(2) + ' / month</div>' );
+	//var avgHydro = ((sum/lineHydro[month-1].length)*0.85).toFixed(2);
+	var avgHydro = ((cost)*0.85).toFixed(2);
+	$( "#hydrocostfld" ).replaceWith( '<div id="hydrocostfld">$' + avgHydro + ' / day | $' + (avgHydro*31).toFixed(2) + ' / month<br /><span style="color:#AA0000;">Installation Cost: $0.00</span></div>' );
 	// AVG Wind
 	sum = 0;
 	for(var i = 0; i < lineWind[month-1].length; i++){
 		sum += parseInt(lineWind[month-1][i], 10); //don't forget to add the base
 	}
-	var avgWind = ((sum/lineWind[month-1].length)*0.1919).toFixed(2);
-	$( "#windcostfld" ).replaceWith( '<div id="windcostfld">$' + avgWind + ' / day | $' + (avgWind*31).toFixed(2) + ' / month</div>' );
+	//var avgWind = ((sum/lineWind[month-1].length)*0.1919).toFixed(2);
+	var avgWind = ((cost)*0.1919).toFixed(2);
+	$( "#windcostfld" ).replaceWith( '<div id="windcostfld">$' + avgWind + ' / day | $' + (avgWind*31).toFixed(2) + ' / month<br /><span style="color:#AA0000;">Installation Cost: $0.00+</span></div>' );
 	//----
 	for(var i=0; i<lineSolar[month-1].length; i++) {
 		lineSolar[month-1][i] *= numsolar;
