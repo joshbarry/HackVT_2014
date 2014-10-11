@@ -15,7 +15,7 @@
 </head>
 
 <body class="sf-home">
-	<h1 style="text-align:center;">The Cost of <i>Going Green</i></h1>
+	<h1 style="text-align:center; color:#84CF96;" >The Cost of <i>Going Green</i></h1>
 	<div id="content">
 		<div id="content-left">
 			<form>
@@ -60,6 +60,22 @@
 				<div class="viewField" style="margin:8px; display:block;">
 				<div id="windcostfld">$</div>
 				</div>
+			</div>
+			<div class="viewItem">
+			<table>
+			<tr>
+			<td><label for="switch">Solar:</label></td>
+			<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>
+			</tr>
+			<tr>
+			<td><label for="switch">Wind:</label></td>
+			<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>
+			</tr>
+			<tr>
+			<td><label for="switch">Hydro:</label></td>
+			<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>
+			</tr>
+			</table>
 			</div>
 			</form>
 		</div>
