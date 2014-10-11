@@ -17,36 +17,7 @@ while($row = mysqli_fetch_array($resultAnchor)) {
 	<link rel="shortcut icon" href="img/icon.ico">
 	<link href="css/mainStyle.css" type="text/css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<<<<<<< HEAD
-	<script src="./js/jquery-min.js"></script>
-	<script>
-function addFields(){
-  $("#heatUse").replaceWith('<div id="heatUse"> <p>Heat Usage: </p><?php echo $a1 ?><input type="range" name="heatusage" id="heatusage" value="1" min=<?php $a3 ?> max=<?php $a4 ?>><?php echo $a2 ?><br></div>');
-}
-function addPower(){
-	$("#powerUse").replaceWith('<div id="powerUse"> <p>Heat Usage: </p><?php echo $a1 ?><input type="range" name="heatusage" id="heatusage" value="1" min=<?php $a3 ?> max=<?php $a4 ?>><?php echo $a2 ?><br></div>');
-}
-
-function addTrans(){
-	$("#transportDiv").replaceWith('<p>Vehicle Type</p><div id="trnasportDiv"> <select id="car" name="car"><option value="-1" disabled="disabled" selected="selected">Select a Vehicle Type</option><option value="suv">SUV</option><option value="Sedan">Sedan</option><option value="Hybrid">Hybrid</option><option value="ev">Electric Vehicle</option></select><br>');
-}
-$(function(){
-	$('#heat').click(function(){
-		addFields();
-	});
-	
-	$('#power').click(function(){
-		addPower();
-	});
-	
-	$('#transport').click(function(){
-		addTrans();
-	});
-});
-</script>
-=======
 	<script src="/js/jquery-min.js"></script>
->>>>>>> origin/master
 </head>
 
 <body class="sf-home">
