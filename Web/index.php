@@ -1,27 +1,42 @@
 <?php
-// Create connection
-$con=mysqli_connect("localhost","root","=Hodod3ndron","hackvt");
+require_once("support.php");
+$con = dbconnect();
 
-// Check connection
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+	$resultAnchor = mysqli_query($con,"SELECT * FROM anchors"); 
+	while($row = mysqli_fetch_array($resultAnchor)) {
+	  $a1=$row['a1'];
+	  $a2=$row['a2'];
+	  $a3=$row['min'];
+	  $a4=$row['max'];
+	}
 ?>
 
-<script>
-function addFields(){
-$(.heatUse).append('<p>Hello World<p>');       
-}
-</script>
 
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>HackVT 2014</title>
 	<link rel="shortcut icon" href="img/icon.ico">
 	<link href="css/mainStyle.css" type="text/css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="./js/jquery-min.js"></script>
+	<script>
+function addFields(){
+  $("#heatUse").replaceWith('<div id="heatUse"> <p>Heat Usage: </p><?php echo $a1 ?><input type="range" name="heatusage" id="heatusage" value="1" min=<?php $a3 ?> max=<?php $a4 ?>><?php echo $a2 ?><br></div>');
+}
+function addPower(){
+	$("#powerUse").replaceWith('<div id="powerUse"> <p>Heat Usage: </p><?php echo $a1 ?><input type="range" name="heatusage" id="heatusage" value="1" min=<?php $a3 ?> max=<?php $a4 ?>><?php echo $a2 ?><br></div>');
+}
+$(function(){
+	$('#heat').click(function(){
+		addFields();
+	});
+	
+	$('#power').click(function(){
+		addPower();
+	});
+});
+</script>
 </head>
 
 <body class="sf-home">
@@ -34,9 +49,9 @@ $(.heatUse).append('<p>Hello World<p>');
   		<input type="checkbox" value="1" id="checkRent" name="checkRent"  style="display:none"/>
 	  	<label for="checkRent"></label></div><br><br>
 	How Long Will You Stay:<input type="range" name="years" id="years" value="5" data-popup-enabled="true" data-hightlight="true" min="0" max="80"><br>
-	Current Heat Source:<select name="heat" onchange="addFields()">
+	Current Heat Source:<select name="heat" id="heat">
 		<option value="-1" disabled="disabled" selected="selected">Select a Heat Source</option>
-		<option value="wood" <?php if ($_GET["heat"] == "wood") { print "selected=\"selected\""; } ?> >Wood</option>
+		<option value="wood">Wood</option>
 		<option value="pellet">Pellet Stove</option>
 		<option value="natural gas">Natural Gas</option>
 		<option value="oil">Oil</option>
@@ -46,18 +61,19 @@ $(.heatUse).append('<p>Hello World<p>');
 		<option value="heatPump">Heat Pump</option>
 		<option value="baseboard">Baseboard</option>
 		</select><br>
-	<div class="heatUse"> </div>
-	Heat Usage: <?php echo $a1 ?><input type="range" name="heatusage" id="heatusage" value="1" min=<?php $a3 ?> max=<?php $a4 ?>><?php echo $a2 ?><br>
-	Type of Power<select name="power">
+	<div id="heatUse"> </div>
+	Type of Power<select id="power" name="power">
+		<option value="-1" disabled="disabled" selected="selected">Select a Power Source</option>
 		<option value="electric">Electric (Grid)</option>
 		<option value="solar">Solar</option>
 		<option value="wind">Wind</option>
 		<option value="hydro">Hydro</option>
 		</select><br>
-	<?php //insert SQL code to update anchor text ?>
-	Power Usage: <?php echo "Anchor 1" ?><input type="range" name="powerusage" id="powerusage" value="50" min="0" max="100"><?php echo "Anchor 2" ?><br>
+	<div id="powerUse"> </div>
+	
 	</form>
 
 </body>
 
 </html>
+<?php dbdisconnect($con); ?>
