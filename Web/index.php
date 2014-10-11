@@ -62,7 +62,7 @@
 				</div>
 			</div>
 			<div class="viewItem">
-				<table>
+				<table style="width:100%;">
 				<tr>
 				<td><label for="switch">Solar:</label></td>
 				<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>

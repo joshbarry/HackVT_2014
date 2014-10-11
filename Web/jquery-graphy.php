@@ -34,7 +34,7 @@ function makifyGraph( val1, val2 ){
 	});
 }*/
 function makifyGraph( month = 1, cost = 0, numsolar = 1 ){
-	$("#chartdiv").replaceWith('<div id="chartdiv" style="height:450px;width:450px; "></div>');
+	$("#chartdiv").replaceWith('<div id="chartdiv" style="height:635px;width:635px; "></div>');
 	var months = [ "January", "February", "March", "April", "May", "June", 
                "July", "August", "September", "October", "November", "December" ];
 	var selectedMonthName = months[month-1];

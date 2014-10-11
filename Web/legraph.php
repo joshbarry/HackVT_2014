@@ -1,1 +1,1 @@
-<div id="chartdiv" style="height:450px;width:450px; "></div>
+<div id="chartdiv" style="height:635px;width:635px; "></div>
