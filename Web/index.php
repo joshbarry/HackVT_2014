@@ -27,6 +27,10 @@ function addFields(){
 function addPower(){
 	$("#powerUse").replaceWith('<div id="powerUse"> <p>Heat Usage: </p><?php echo $a1 ?><input type="range" name="heatusage" id="heatusage" value="1" min=<?php $a3 ?> max=<?php $a4 ?>><?php echo $a2 ?><br></div>');
 }
+
+function addTrans(){
+	$("#transportDiv").replaceWith('<p>Vehicle Type</p><div id="trnasportDiv"> <select id="car" name="car"><option value="-1" disabled="disabled" selected="selected">Select a Vehicle Type</option><option value="suv">SUV</option><option value="Sedan">Sedan</option><option value="Hybrid">Hybrid</option><option value="ev">Electric Vehicle</option></select><br>');
+}
 $(function(){
 	$('#heat').click(function(){
 		addFields();
@@ -34,6 +38,10 @@ $(function(){
 	
 	$('#power').click(function(){
 		addPower();
+	});
+	
+	$('#transport').click(function(){
+		addTrans();
 	});
 });
 </script>
@@ -45,6 +53,13 @@ $(function(){
 	First name: <input type="text" name="firstname"><br>
 	City (Home):<input type="text" name="home-address"><br>
 	City (Work):<input type="text" name="work-address"><br>
+	Mode of Transport: <select id="transport" name="transport">
+		<option value="-1" disabled="disabled" selected="selected">Select a Method of Transportation</option>
+		<option value="electric">Walk</option>
+		<option value="solar">Bike</option>
+		<option value="wind">Drive</option>
+		</select><br>
+	<div id="transportDiv"> </div>
 	Rent or Buy: <div class="checkRent">
   		<input type="checkbox" value="1" id="checkRent" name="checkRent"  style="display:none"/>
 	  	<label for="checkRent"></label></div><br><br>
