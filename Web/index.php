@@ -21,7 +21,7 @@ while($row = mysqli_fetch_array($resultAnchor)) {
 </head>
 
 <body class="sf-home">
-	<div id="content">
+	<div id="content-left">
 		<form>
 		<div class="viewItem">
 			<div class="viewTitle">First name:</div>
@@ -100,6 +100,9 @@ while($row = mysqli_fetch_array($resultAnchor)) {
 		<div id="powerUse"></div>
 		
 		</form>
+	</div>
+	<div id="content-right">
+		A BIG HONKING CHART GOES HERE
 	</div>
 </body>
 
