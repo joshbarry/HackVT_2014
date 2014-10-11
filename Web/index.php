@@ -37,46 +37,46 @@
 					<input type="range" name="solar" id="solar" value="1" data-popup-enabled="true" data-hightlight="true" min="1" max="10">
 				</div>
 			</div>
-			<div class="viewItem">
+			<div class="viewItem" style="margin-top:5px;">
 				<div class="viewTitle">Your Current Average Cost:</div>
 				<div class="viewField" style="margin:8px; display:block;">
 				<div id="avgcostfld">$</div>
 				</div>
 			</div>
-			<div class="viewItem">
+			<div class="viewItem" style="margin-top:5px;">
 				<div class="viewTitle">Average Solar Cost:</div>
 				<div class="viewField" style="margin:8px; display:block;">
 				<div id="solarcostfld">$</div>
 				</div>
 			</div>
-			<div class="viewItem">
+			<div class="viewItem" style="margin-top:5px;">
 				<div class="viewTitle">Average Hydro Cost:</div>
 				<div class="viewField" style="margin:8px; display:block;">
 				<div id="hydrocostfld">$</div>
 				</div>
 			</div>
-			<div class="viewItem">
+			<div class="viewItem" style="margin-top:5px;">
 				<div class="viewTitle">Average Wind Cost:</div>
 				<div class="viewField" style="margin:8px; display:block;">
 				<div id="windcostfld">$</div>
 				</div>
-			</div>
+			</div><!--
 			<div class="viewItem">
 				<table style="width:100%;">
 				<tr>
 				<td><label for="switch">Solar:</label></td>
-				<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>
+				<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch" checked></td>
 				</tr>
 				<tr>
 				<td><label for="switch">Wind:</label></td>
-				<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>
+				<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch" checked></td>
 				</tr>
 				<tr>
 				<td><label for="switch">Hydro:</label></td>
-				<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch"></td>
+				<td><input type="checkbox" data-role="flipswitch" name="switch" id="switch" checked></td>
 				</tr>
 				</table>
-			</div>
+			</div>-->
 			</form>
 		</div>
 		<div id="content-right">
