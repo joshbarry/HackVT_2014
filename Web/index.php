@@ -28,7 +28,7 @@
 			<div class="viewItem">
 				<div class="viewTitle">Monthly KW/H Usage:</div>
 				<div class="viewField">
-					<input type="range" name="cost" id="cost" value="0" data-popup-enabled="true" data-hightlight="true" min="0" max="4500">
+					<input type="range" name="cost" id="cost" value="0" data-popup-enabled="true" data-hightlight="true" min="0" max="1500">
 				</div>
 			</div>
 			<div class="viewItem">
