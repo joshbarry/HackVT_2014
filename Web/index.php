@@ -1,15 +1,4 @@
-<?php
-require_once("support.php");
-$con = dbconnect();
 
-$resultAnchor = mysqli_query($con,"SELECT * FROM anchors"); 
-while($row = mysqli_fetch_array($resultAnchor)) {
-	$a1=$row['a1'];
-	$a2=$row['a2'];
-	$a3=$row['min'];
-	$a4=$row['max'];
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +6,7 @@ while($row = mysqli_fetch_array($resultAnchor)) {
 	<link rel="shortcut icon" href="img/icon.ico">
 	<link href="css/mainStyle.css" type="text/css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="/js/jquery-min.js"></script>
+	<?php include 'jquery-min.php' ?>
 </head>
 
 <body class="sf-home">
