@@ -33,8 +33,11 @@ function makifyGraph( val1, val2 ){
       }
 	});
 }*/
-function makifyGraph( val1, val2 ){
+function makifyGraph( month = 1, cost = 500 ){
 	$("#chartdiv").replaceWith('<div id="chartdiv" style="height:450px;width:450px; "></div>');
+	var months = [ "January", "February", "March", "April", "May", "June", 
+               "July", "August", "September", "October", "November", "December" ];
+	var selectedMonthName = months[month-1];
 	var lineSolar = [];
 	for (var i=0; i<5; i+=1){
 		lineSolar.push([i, i*i]);
@@ -49,11 +52,11 @@ function makifyGraph( val1, val2 ){
 	}
 	var lineAvgCost = [];
 	for (var i=0; i<5; i+=1){
-		lineAvgCost.push([i, 15]);
+		lineAvgCost.push([i, cost]);
 	}
 	var plot2 = $.jqplot ('chartdiv', [lineSolar, lineHydro, lineWind, lineAvgCost], {
       // Give the plot a title.
-      title: 'Plot With Options',
+      title: 'Averages for ' + selectedMonthName,
       // You can specify options for all axes on the plot at once with
       // the axesDefaults object.  Here, we're using a canvas renderer
       // to draw the axis label which allows rotated text.
