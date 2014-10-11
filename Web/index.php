@@ -8,6 +8,7 @@
 	<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]-->
 	<script language="javascript" type="text/javascript" src="/lib/jqplot/jquery.jqplot.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/lib/jqplot/jquery.jqplot.css" />
+	<script language="javascript" type="text/javascript" src="/lib/jqplot/plugins/jqplot.barRenderer.min.js"></script>
 	<?php include 'jquery-min.php' ?>
 </head>
 
