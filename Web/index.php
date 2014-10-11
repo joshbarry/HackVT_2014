@@ -26,9 +26,9 @@
 				</div>
 			</div>
 			<div class="viewItem">
-				<div class="viewTitle">Monthly Electric Bill ($):</div>
+				<div class="viewTitle">Monthly KW/H Usage:</div>
 				<div class="viewField">
-					<input type="range" name="cost" id="cost" value="500" data-popup-enabled="true" data-hightlight="true" min="0" max="2000">
+					<input type="range" name="cost" id="cost" value="0" data-popup-enabled="true" data-hightlight="true" min="0" max="4500">
 				</div>
 			</div>
 			<div class="viewItem">

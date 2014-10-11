@@ -33,25 +33,25 @@ function makifyGraph( val1, val2 ){
       }
 	});
 }*/
-function makifyGraph( month = 1, cost = 500 ){
+function makifyGraph( month = 1, cost = 0 ){
 	$("#chartdiv").replaceWith('<div id="chartdiv" style="height:450px;width:450px; "></div>');
 	var months = [ "January", "February", "March", "April", "May", "June", 
                "July", "August", "September", "October", "November", "December" ];
 	var selectedMonthName = months[month-1];
 	var lineSolar = [];
-	for (var i=0; i<5; i+=1){
+	for (var i=0; i<31; i+=1){
 		lineSolar.push([i, i*i]);
 	}
 	var lineHydro = [];
-	for (var i=0; i<5; i+=1){
+	for (var i=0; i<31; i+=1){
 		lineHydro.push([i, i+i]);
 	}
 	var lineWind = [];
-	for (var i=0; i<5; i+=1){
+	for (var i=0; i<31; i+=1){
 		lineWind.push([i, i]);
 	}
 	var lineAvgCost = [];
-	for (var i=0; i<5; i+=1){
+	for (var i=0; i<31; i+=1){
 		lineAvgCost.push([i, cost]);
 	}
 	var plot2 = $.jqplot ('chartdiv', [lineSolar, lineHydro, lineWind, lineAvgCost], {
@@ -85,10 +85,14 @@ function makifyGraph( month = 1, cost = 500 ){
           // Turn off "padding".  This will allow data point to lie on the
           // edges of the grid.  Default padding is 1.2 and will keep all
           // points inside the bounds of the grid.
-          pad: 0
+          pad: 0,
+		  min: 1,
+		  max: 31
         },
         yaxis: {
-          label: "KW/H Usage (AVG)"
+          label: "Daily KW/H Usage (AVG)",
+		  min: 0,
+		  max: 150
         }
       }
     });
