@@ -97,7 +97,7 @@
 			</form>
 		</div>
 		<div id="content-right">
-			A BIG HONKING CHART GOES HERE
+			<?php include ("legraph.php"); ?>
 		</div>
 	</div>
 </body>
