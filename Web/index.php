@@ -10,8 +10,8 @@ if (mysqli_connect_errno()) {
 
 <script>
 function addFields(){
-document.write("TEST");
-//document.write("Heat Usage: <?php echo $a1 ?><input type="range" name="heatusage" id="heatusage" value="1" min=<?php $a3 ?> max=<?php $a4 ?>><?php echo $a2 ?><br>");            
+$(.heatUse).append('<p>Hello World<p>');       
+}
 </script>
 
 <!DOCTYPE html>
@@ -46,6 +46,7 @@ document.write("TEST");
 		<option value="heatPump">Heat Pump</option>
 		<option value="baseboard">Baseboard</option>
 		</select><br>
+	<div class="heatUse"> </div>
 	Heat Usage: <?php echo $a1 ?><input type="range" name="heatusage" id="heatusage" value="1" min=<?php $a3 ?> max=<?php $a4 ?>><?php echo $a2 ?><br>
 	Type of Power<select name="power">
 		<option value="electric">Electric (Grid)</option>
