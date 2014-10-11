@@ -12,6 +12,7 @@
 </head>
 
 <body class="sf-home">
+	<h1>Environmental Calculator V.II.V</h1>
 	<div id="content">
 		<div id="content-left">
 			<form>
